@@ -1,16 +1,18 @@
-# Robson8266
-Repositório para ajudar o Robson a usar o presente dele
-
-Robson aprenda a usar o github imeditamente!!!
+# Microcontroller
+Repositório para facilitar e documentar a utilização de microcontroladores como esp32 e esp8266 na arduino IDE além das placas  normais Arduino.
 
 
 
 
-Tutoriais para uso do ESP8266:
+Tutoriais para uso do ESP8266 e ESP32:
 ===
 
 ## Instalação da Arduino IDE:
 
+Instruções para Windows:
+Baixe e instale o pelo site oficial. 
+
+Intruções para linux:
 Seja um bom computeiro e baixe os arquivos de instalação do [site oficial](https://www.arduino.cc/en/main/software) para sua arquitetura.
 
 Coloque os arquivos baixados na sua /home (ou /opt se você utilizar), extraia e renomeie a pasta criada para "Arduino".
@@ -33,7 +35,7 @@ Torça pra dar certo.
 
 Se tudo der certo você verá a Arduino IDE no menu de aplicações, abra o programa.
 
-Provavelmente você precisará se adicionar ao grupo local para ter permissão de acesso as portas USB, você pode fazer isso com:
+Caso esteja no linux provavelmente você precisará se adicionar ao grupo local para ter permissão de acesso as portas USB, você pode fazer isso com:
 ```
 sudo usermod -a -G dialout <username>
 ```
@@ -54,16 +56,17 @@ Inicialmente você precisará do driver do USB Serial do ESP, normalmene ele usa
 
 Caso esteja usando o windows dê seus pulos para instalar o driver.
 
-### Suporte ao ESP8266
+### Suporte ao ESP8266 e ESP32
 
 Vá em preferências dentro do menu de arquivos:
 
 ![Vá em preferências](https://uploads.filipeflop.com/2016/05/IDE-Arquivo.png)
 
-no campo **URLs adicionais de Gerenciadores de Placas** adicione:
+no campo **URLs adicionais de Gerenciadores de Placas** adicione uma por linha:
 
 ```
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
+https://dl.espressif.com/dl/package_esp32_index.json
 ```
 
 ![adicione a URL](https://uploads.filipeflop.com/2016/05/IDE-Preferencias.png)
@@ -77,12 +80,15 @@ Procure por esp8266 e instale o pacote de placas.
 
 Pronto, agora você tem suporte ao ESP8266 dentro da Arduino IDE.
 
+Faça o mesmo para o esp32.
+
 ### Selecionando a placa certa
 
 Para que o compilador saiba gerar o código na linguagem montadora correta para sua arquitetura você precisa indicar que tipo de hardware está utilizando. Você fará isso selecionado a sua placa. Preste atenção: **antes de compilar/fazer upload de um código selecione a placa correta**
 
 Vá até Ferramentas -> Placas:
-E selecione NodeMCU 1.0 (ESP 12-E module), normalmente esse funciona.
+E selecione NodeMCU 1.0 (ESP 12-E module), normalmente esse funciona para o esp8266.
+Para o esp32, procure o nome na parte de baixo do microcontrolador
 
 ![Selecionando a placa](https://uploads.filipeflop.com/2016/05/IDE-Selecao-Placa.png)
 
